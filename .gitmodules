@@ -1,0 +1,9 @@
+[submodule "olfs"]
+	path = olfs
+	url = https://github.com/opendap/olfs
+[submodule "libdap4"]
+	path = libdap4
+	url = https://github.com/opendap/libdap4
+[submodule "bes"]
+	path = bes
+	url = https://github.com/opendap/bes
