@@ -1,7 +1,8 @@
 
 AUTOMAKE_OPTIONS = foreign
 
-SUBDIRS = . libdap4 bes
+SUBDIRS = . olfs 
+# libdap4 bes
 
 # This 'local' all target is here in case the user did not use the
 # --recursive option with clone or submodule. Not sure this will 

@@ -51,8 +51,10 @@ built.
 ### Build it
 
    autoreconf --force --include --verbose
-   configure --prefix=$prefix --with-dependencies=$prefix/deps --enable-developer
+   configure --prefix=$prefix --with-dependencies=$prefix/deps --enable-developer \
+   	     --with-libdap=`pwd`/libdap4
    make -j9
+   make -j9 install
 
 ### Tomcat
 
