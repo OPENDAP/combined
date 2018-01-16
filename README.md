@@ -3,7 +3,7 @@
 
 ## Under construction
 
-The _combined_ project is similar to teh _hyrax_ project in that it
+The _combined_ project is similar to the _hyrax_ project in that it
 contains all the code OPeNDAP has written that is currently in the
 the production release of the Hyrax Data Server. However, unlike 'hyrax,'
 this project uses git submodules and a single configure/Makefile to
@@ -55,6 +55,14 @@ built.
    	     --with-libdap=`pwd`/libdap4
    make -j9
    make -j9 install
+   
+### Integrating the _hyrax dependencies_
+
+There is a fourth GitHub project called _hyrax-dependencies_ that holds
+all of the odd dependencies that hyrax needs - not the stuff you can get 
+easily from _yum_. These include, new(er) versins of HDF5, netCDF, ..., as
+well as odd things like _gridfields_. The _hyrax_ project uses the dependencies
+project and this should too.
 
 ### Tomcat
 
