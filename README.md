@@ -28,10 +28,10 @@ as shorthand for the packages you need (with the advantage that some
 users can cut and paste in a plain machine and get the packages
 installed very quickly):
 
-yum install java-1.7.0-openjdk java-1.7.0-openjdk-devel ant git \
-    gcc-c++ flex bison autoconf automake libtool emacs openssl-devel \
-    libuuid-devel readline-devel zlib-devel bzip2 bzip2-devel \
-    libjpeg-devel libxml2-devel curl-devel libicu-devel
+    yum install java-1.7.0-openjdk java-1.7.0-openjdk-devel ant git \
+        gcc-c++ flex bison autoconf automake libtool emacs openssl-devel \
+        libuuid-devel readline-devel zlib-devel bzip2 bzip2-devel \
+        libjpeg-devel libxml2-devel curl-devel libicu-devel
 
 ### Clone
 
@@ -57,18 +57,18 @@ built.
 
 ### Build it
 
-   autoreconf --force --include --verbose
-   configure --prefix=$prefix --with-dependencies=$prefix/deps --enable-developer \
+    autoreconf --force --include --verbose
+    configure --prefix=$prefix --with-dependencies=$prefix/deps --enable-developer \
    	     --with-libdap=`pwd`/libdap4
-   make -j9
-   make -j9 install
+    make -j9
+    make -j9 install
    
 ### Comveniences
 
 I have defined an alias _update_ that will pull and recursively update all the 
 child repos. To use this, run _git update_ in this directory. The alias is defined
 as:
-   git config --global alias.update '!git pull && git submodule update --init --recursive'
+    git config --global alias.update '!git pull && git submodule update --init --recursive'
    
 ### Integrating the _hyrax dependencies_
 
