@@ -68,6 +68,7 @@ built.
 I have defined an alias _update_ that will pull and recursively update all the 
 child repos. To use this, run _git update_ in this directory. The alias is defined
 as:
+
     git config --global alias.update '!git pull && git submodule update --init --recursive'
    
 ### Integrating the _hyrax dependencies_
