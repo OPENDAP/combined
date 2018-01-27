@@ -9,6 +9,13 @@ the production release of the Hyrax Data Server. However, unlike 'hyrax,'
 this project uses git submodules and a single configure/Makefile to
 build the code.
 
+## What's here
+
+This meta-project contains the libdap4, bes, hyrax-dependencies and olfs
+repositories along with autotools builds scripts (configure, make, et c.)
+to build them. You can work within one of the repos as if it was independently
+cloned as well as build the whole server.
+
 ## Details
 
 ### Linux/OSX
@@ -56,6 +63,13 @@ built.
    make -j9
    make -j9 install
    
+### Comveniences
+
+I have defined an alias _update_ that will pull and recursively update all the 
+child repos. To use this, run _git update_ in this directory. The alias is defined
+as:
+   git config --global alias.update '!git pull && git submodule update --init --recursive'
+   
 ### Integrating the _hyrax dependencies_
 
 There is a fourth GitHub project called _hyrax-dependencies_ that holds
@@ -63,6 +77,16 @@ all of the odd dependencies that hyrax needs - not the stuff you can get
 easily from _yum_. These include, new(er) versins of HDF5, netCDF, ..., as
 well as odd things like _gridfields_. The _hyrax_ project uses the dependencies
 project and this should too.
+
+### Caveat Emptor
+
+The BES repository has submodules of its own. Currently (Jan 2018) those are the HDF4 
+and HDF5 handlers and the SQL handler. If you work with those, you must commit, push, et c., 
+from within those directories. Then, make sure to update the BES too, so that the correct
+commit hashes are recorded in the _.gitsubmodules_ file.
+
+The repository URLs all use the HTTPS protocol. On older versions of git, you cannot
+push commits and will need to switch the repos to use ssh.
 
 ### Tomcat
 
