@@ -9,6 +9,20 @@ the production release of the Hyrax Data Server. However, unlike 'hyrax,'
 this project uses git submodules and a single configure/Makefile to
 build the code.
 
+#### Problems
+
+* When the code is built (_make -j9_) and then installed (_make -j9 install_),
+the BES will be recompiled since the libdap4 headers, just installed into
+$prefix/include will be seen as new (they are) and this triggers a (re)compile
+of the whole BES.
+* Running _make check_ is not particularly meaningfull since _check_ in the OLFS
+requires a running server and will run end-to-end tests (but doesn't know how
+to start the server. The _check_ target in libdap and BES is self contained
+* The hyrax-dependencies project uses a completely hand built Makefile and thus
+lacks some/many/most of the automake targets. Running 'make _some target_'
+will result in an error. The only supported standard targets are: all, dist, 
+install, uninstall, clean and check. There are some unique targets too.
+
 ## What's here
 
 This meta-project contains the libdap4, bes, hyrax-dependencies and olfs
@@ -26,7 +40,7 @@ in Java.
 
 The DAP2 and 4 implementations. C++
 
-#### BES
+#### _BES_
 
 A Unix Daemon that is the dat processing engine at the heart of the Hyrax server.
 C++
