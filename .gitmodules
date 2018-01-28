@@ -7,3 +7,6 @@
 [submodule "bes"]
 	path = bes
 	url = https://github.com/opendap/bes
+[submodule "hyrax-dependencies"]
+	path = hyrax-dependencies
+	url = https://github.com/opendap/hyrax-dependencies

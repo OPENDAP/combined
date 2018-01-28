@@ -1,8 +1,7 @@
 
 AUTOMAKE_OPTIONS = foreign
 
-SUBDIRS = . olfs 
-# libdap4 bes
+SUBDIRS = . olfs hyrax-dependencies libdap4 bes
 
 # This 'local' all target is here in case the user did not use the
 # --recursive option with clone or submodule. Not sure this will 
