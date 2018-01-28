@@ -112,6 +112,9 @@ Get the Tomcat distribution from _hyrax-dependencies/extra_downloads_ and unpack
 the _build_ directory. Use _make install_ in the _olfs_ or top level direcotry to 
 install the _oepndap.war_ file (that implements the web interface for Hyrax.
 
+For a real deployment of Hyrax, using the Tomcat from a RPM or DEB packages is better,
+but for development, using a local Tomcat will simply testing.
+
 ### Test
 
 TBD
