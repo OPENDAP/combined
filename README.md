@@ -84,7 +84,10 @@ built.
    	     --with-libdap=`pwd`/libdap4
     make -j9
     make -j9 install
-   
+
+See the _TOMCAT_ section below if you want a running server (and not just the 
+BES daemon.
+
 ### Comveniences
 
 I have defined an alias _update_ that will pull and recursively update all the 
@@ -105,7 +108,9 @@ push commits and will need to switch the repos to use ssh.
 
 ### Tomcat
 
-TBD
+Get the Tomcat distribution from _hyrax-dependencies/extra_downloads_ and unpack it in
+the _build_ directory. Use _make install_ in the _olfs_ or top level direcotry to 
+install the _oepndap.war_ file (that implements the web interface for Hyrax.
 
 ### Test
 
