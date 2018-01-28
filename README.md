@@ -40,7 +40,7 @@ in Java.
 
 The DAP2 and 4 implementations. C++
 
-#### BES
+#### _BES_
 
 A Unix Daemon that is the dat processing engine at the heart of the Hyrax server.
 C++
