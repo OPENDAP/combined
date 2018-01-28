@@ -16,6 +16,28 @@ repositories along with autotools builds scripts (configure, make, et c.)
 to build them. You can work within one of the repos as if it was independently
 cloned as well as build the whole server.
 
+#### _OLFS_
+
+This software implements the web API of the Data Access Protocol (DAP) and 
+other web interfaces for Hyrax. Most of the 'web functionality' is here. Written 
+in Java.
+
+#### _libdap4_
+
+The DAP2 and 4 implementations. C++
+
+#### BES
+
+A Unix Daemon that is the dat processing engine at the heart of the Hyrax server.
+C++
+
+#### _hyrax dependencies_
+
+There is a GitHub project called _hyrax-dependencies_ that holds all of the
+odd dependencies that hyrax needs - not the stuff you can get easily from _yum_.
+The code included in hyrax-dependencies includes, new(er) versins of HDF5, 
+netCDF, ..., as well as more unusual things like _gridfields_.
+
 ## Details
 
 ### Linux/OSX
@@ -69,15 +91,7 @@ I have defined an alias _update_ that will pull and recursively update all the
 child repos. To use this, run _git update_ in this directory. The alias is defined
 as:
 
-    git config --global alias.update '!git pull && git submodule update --init --recursive'
-   
-### Integrating the _hyrax dependencies_
-
-There is a fourth GitHub project called _hyrax-dependencies_ that holds
-all of the odd dependencies that hyrax needs - not the stuff you can get 
-easily from _yum_. These include, new(er) versins of HDF5, netCDF, ..., as
-well as odd things like _gridfields_. The _hyrax_ project uses the dependencies
-project and this should too.
+    git config --global alias.update '!git pull && git submodule update --init --recursive
 
 ### Caveat Emptor
 
