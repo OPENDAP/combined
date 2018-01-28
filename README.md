@@ -110,7 +110,10 @@ push commits and will need to switch the repos to use ssh.
 
 Get the Tomcat distribution from _hyrax-dependencies/extra_downloads_ and unpack it in
 the _build_ directory. Use _make install_ in the _olfs_ or top level direcotry to 
-install the _oepndap.war_ file (that implements the web interface for Hyrax.
+install the _oepndap.war_ file (that implements the web interface for Hyrax. You can install
+tomcat using:
+
+    tar -C build -xzf hyrax-dependencies/extra_downloads/apache-tomcat-7.0.57.tar.gz
 
 For a real deployment of Hyrax, using the Tomcat from a RPM or DEB packages is better,
 but for development, using a local Tomcat will simply testing.
