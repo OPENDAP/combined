@@ -42,7 +42,7 @@ The DAP2 and 4 implementations. C++
 
 #### _BES_
 
-A Unix Daemon that is the dat processing engine at the heart of the Hyrax server.
+A Unix Daemon that is the data processing engine at the heart of the Hyrax server.
 C++
 
 #### _hyrax dependencies_
@@ -68,6 +68,15 @@ installed very quickly):
         gcc-c++ flex bison autoconf automake libtool emacs openssl-devel \
         libuuid-devel readline-devel zlib-devel bzip2 bzip2-devel \
         libjpeg-devel libxml2-devel curl-devel libicu-devel
+
+### OSX
+
+NB: If you get odd errors during the hyrax-depedencies build, make sure
+that the OSX command line decloper tools have been installed.
+
+Install Xcode and the command line tools. In addition, you will need
+to build install newer versions of bison, automake, autoconf,
+libtool. You will also need ant for the olfs build.
 
 ### Clone
 
