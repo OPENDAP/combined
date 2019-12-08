@@ -1,12 +1,16 @@
 [submodule "olfs"]
 	path = olfs
 	url = https://github.com/opendap/olfs
+	branch = master
 [submodule "libdap4"]
 	path = libdap4
 	url = https://github.com/opendap/libdap4
+	branch = master
 [submodule "bes"]
 	path = bes
 	url = https://github.com/opendap/bes
+	branch = master
 [submodule "hyrax-dependencies"]
 	path = hyrax-dependencies
 	url = https://github.com/opendap/hyrax-dependencies
+	branch = master
