@@ -24,16 +24,15 @@ bes: libdap4
 	(cd bes && $(MAKE) $(MFLAGS) check)
 	(cd bes && $(MAKE) $(MFLAGS) install)
 
-libdap4: run-configure
+libdap4: build-hyrax-dependencies # run-configure
 	(cd libdap4 && $(MAKE) $(MFLAGS))
 	(cd libdap4 && $(MAKE) $(MFLAGS) check)
 	(cd libdap4 && $(MAKE) $(MFLAGS) install)
 
 run-configure: # build-hyrax-dependencies
-	./configure --prefix=$prefix --with-dependencies=$prefix/deps \
+	./configure --prefix=$$prefix --with-dependencies=$$prefix/deps \
 		--with-libdap=`pwd`/libdap4 --enable-developer 
 
-# Not used
 build-hyrax-dependencies:
-	(cd hyrax-dependencies && $(MAKE) $(MFLAGS)
+	(cd hyrax-dependencies && $(MAKE) $(MFLAGS))
 
