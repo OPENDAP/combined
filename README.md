@@ -15,9 +15,9 @@ build the code.
 the BES will be recompiled since the libdap4 headers, just installed into
 $prefix/include will be seen as new (they are) and this triggers a (re)compile
 of the whole BES.
-* Running _make check_ is not particularly meaningfull since _check_ in the OLFS
+* Running _make check_ is not particularly meaningful since _check_ in the OLFS
 requires a running server and will run end-to-end tests (but doesn't know how
-to start the server. The _check_ target in libdap and BES is self contained
+to start the server). The _check_ target in libdap and BES is self contained
 * The hyrax-dependencies project uses a completely hand built Makefile and thus
 lacks some/many/most of the automake targets. Running 'make _some target_'
 will result in an error. The only supported standard targets are: all, dist, 
@@ -26,9 +26,9 @@ install, uninstall, clean and check. There are some unique targets too.
 ## What's here
 
 This meta-project contains the libdap4, bes, hyrax-dependencies and olfs
-repositories along with autotools builds scripts (configure, make, et c.)
+repositories along with autotools builds scripts (configure, make, etc.)
 to build them. You can work within one of the repos as if it was independently
-cloned as well as build the whole server.
+cloned as well as building the whole server.
 
 #### _OLFS_
 
