@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 add_subdirectory(libdap4)
 add_subdirectory(bes)
+add_subdirectory(sql_handler)
 
 include_directories(bes)
 include_directories(libdap4)
