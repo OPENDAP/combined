@@ -9,6 +9,27 @@
 prefix=$1
 export prefix=${prefix:-$PWD/build}
 
+#if echo $CPPFLAGS | grep ${CONDA_PREFIX}/include > /dev/null
+#then
+#    echo "CPPFLAGS Already set"
+#else
+#    export CPPFLAGS=-I${CONDA_PREFIX}/include
+#fi
+#
+#if echo $LDFLAGS | grep ${CONDA_PREFIX}/lib > /dev/null
+#then
+#    echo "LDFLAGS Already set"
+#else
+#    export LDFLAGS=-L${CONDA_PREFIX}/lib
+#fi
+#
+#if echo $PATH | grep ${CONDA_PREFIX}/bin > /dev/null
+#then
+#    echo "PATH Already has ${CONDA_PREFIX}/bin"
+#else
+#    export PATH=${CONDA_PREFIX}/bin:$PATH
+#fi
+
 if echo $PATH | grep $prefix > /dev/null
 then
     echo "PATH Already set"

@@ -17,22 +17,37 @@ submodule-update:
 
 # This set of rules rule will build and install the components in the
 # correct order
-hyrax:	bes
+hyrax:	bes-stamp
 
-bes: libdap4
+bes-stamp: libdap4-stamp
+	test -n $$prefix
 	(cd bes && $(MAKE) $(MFLAGS))
 	(cd bes && $(MAKE) $(MFLAGS) check)
 	(cd bes && $(MAKE) $(MFLAGS) install)
+	touch bes-stamp
 
-libdap4: build-hyrax-dependencies # run-configure
+libdap4-stamp: run-configure-stamp
+	test -n $$prefix
 	(cd libdap4 && $(MAKE) $(MFLAGS))
 	(cd libdap4 && $(MAKE) $(MFLAGS) check)
 	(cd libdap4 && $(MAKE) $(MFLAGS) install)
+	touch libdap4-stamp
 
-run-configure: # build-hyrax-dependencies
+run-configure-stamp:
+	test -n $$prefix
 	./configure --prefix=$$prefix --with-dependencies=$$prefix/deps \
-		--with-libdap=`pwd`/libdap4 --enable-developer 
+		--with-libdap=`pwd`/libdap4 --enable-developer
+	touch run-configure-stamp
+
+clean-local:
+	-rm run-configure-stamp
+	-rm libdap4-stamp
+
+# make this a function/program that can be called from the actions.
+# adding it a target dep makes the targets from all the time
+env-check:
+	test -n $$prefix
 
 build-hyrax-dependencies:
-	(cd hyrax-dependencies && $(MAKE) $(MFLAGS))
+	(cd hyrax-dependencies && $(MAKE) $(MFLAGS) skinny)
 
